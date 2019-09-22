@@ -1,9 +1,13 @@
-require('./greet.js');
+var person = {
+    firstname: 'Jon',
+    lastname: 'Doe',
+    greet: function() {
+        console.log('Hello, ' + 
+        this.firstname + ' ' + 
+        this.lastname);
+    }
+};
 
-// greet(); this won't work because app.js doesn't have 
-// access to everyting in greet.js. so variable 
-// won't conflict
-// So I do this now: 
+person.greet();
 
-var greet = require('./greet.js');
-greet();
+console.log(person['firstname']);
