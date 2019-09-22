@@ -1,15 +1,16 @@
-var person = {
-    //properties
-    firstname: 'Jon',
-    lastname: 'Doe',
-    //objects
-    greet: function() {
-        console.log('Hello, ' + 
-        this.firstname + ' ' + 
-        this.lastname);
-    }
+//function can create objects
+function Person(firstname, lastname) {
+
+    this.firstname = firstname;
+    this.lastname = lastname;
+
 };
 
-person.greet();
+Person.prototype.greet = function() {
+    console.log('Hello ' + this.firstname);
+};
+
+var jon = new Person('Jon', 'Doe');
+console.log(jon);
 
 console.log(person['firstname']);
