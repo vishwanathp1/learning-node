@@ -13,4 +13,6 @@ Person.prototype.greet = function() {
 var jon = new Person('Jon', 'Doe');
 console.log(jon);
 
-console.log(person['firstname']);
+jon.greet();
+
+console.log(jon.__proto__);
