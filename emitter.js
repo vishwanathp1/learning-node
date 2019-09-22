@@ -1,8 +1,8 @@
-function constructor (parameter1, parameter2, parameter3) {
-    this.firstname = parameter1;
-    this.middlename = parameter2;
-    this.lastname = parameter3;
-}
+// function constructor (parameter1, parameter2, parameter3) {
+//     this.firstname = parameter1;
+//     this.middlename = parameter2;
+//     this.lastname = parameter3;
+// }
 
 function Emitter() {
     this.events = {};
@@ -13,16 +13,15 @@ Emitter.prototype.on = function (onEventType, listenerFunction) {
     this.events[onEventType].push(listenerFunction);
 }
 
-Emitter.prototype.emit = funtion(onEventType) {
+Emitter.prototype.emit = function(onEventType) {
     if (this.events[onEventType]) {
         this.events[onEventType].forEach(function(listenerFunction) {
             listenerFunction();
         });
-    }
+    };
 }
 
 module.exports = Emitter;
-
 
 // {
 //     events = {

@@ -10,3 +10,4 @@ emtr.on('greet', function() {
     console.log('Something else also happened');
 })
 
+emtr.emit('greet');
