@@ -1,18 +1,11 @@
-//function can create objects
-function Person(firstname, lastname) {
+var a = 2;
 
-    this.firstname = firstname;
-    this.lastname = lastname;
+//in an immedeately invoked function expression like below,
+//the scope of the variables create are limited to the 
+//function itself! So outside the function, a remains 3.
+(function(){
+    var a =3;
+    console.log(a);
+}());
 
-};
-
-Person.prototype.greet = function() {
-    console.log('Hello ' + this.firstname);
-};
-
-var jon = new Person('Jon', 'Doe');
-console.log(jon);
-
-jon.greet();
-
-console.log(jon.__proto__);
+console.log(a);
