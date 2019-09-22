@@ -1,4 +1,12 @@
-var greet = require('./greet').default;
+var Emitter = require('./emitter');
 
-greet.english();
-greet.spanish();
+var emtr = new Emitter();
+
+emtr.on('greet', function() {
+    console.log('somewhere, something happened');
+});
+
+emtr.on('greet', function() {
+    console.log('Something else also happened');
+})
+
