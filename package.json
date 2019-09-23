@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vailio/learning-node/issues"
   },
-  "homepage": "https://github.com/vailio/learning-node#readme"
+  "homepage": "https://github.com/vailio/learning-node#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }
