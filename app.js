@@ -1,31 +1,8 @@
-var EventEmitter = require('events');
-var util = require('util');
+var http = require('http');
 
-function Greetr() {
-    this.greeting = 'Hello world!';
-}
-
-util.inherits (Greetr, EventEmitter);
-
-Greetr.prototype.greet = function() {
-    console.log(this.greeting);
-    this.emit('greet');
-}
-
-var greeter1 = new Greetr();
-
-greeter1.on('greet',function () {
-    console.log('someone greeted!');
-})
-
-greeter1.greet();
-
-// greeter1 = {
-//     greeting = 'Hello world!'
-//     greet = function() {
-//         console.log(this.greeting);
-//         this.emit('greet');
-//     }
-//     on = 
-//     emit = function() {run the functions waiting on 'greet'}
-// }
+http.createServer(
+    function(req, res) {
+        res.writeHead( 200, {'Content-Type': 'text/plain'});
+        res.end('Hello World\n');
+    }
+).listen(1337, '127.0.0.1');
